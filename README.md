@@ -1,5 +1,5 @@
 # TimeLock
-This is a work in process project for controlling kids time on computers
+This is a work in progress project for controlling kids time on computers
 
 Cloud Server would solve a lot of the administration and granular configuration
 For now, the compiling would require that the TimeLock exe is part of the Run in the registry in Regedit for windows
