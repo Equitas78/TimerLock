@@ -34,5 +34,5 @@ def show_lock_screen():
 
     unlock_button = tk.Button(root, text="Unlock", command=lambda: unlock(password_entry, root, error_label))
     unlock_button.pack(pady=10)
-   
+    
     root.mainloop()
