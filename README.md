@@ -23,4 +23,4 @@ Install python (i did the dev in VSCode free from microsoft)
   - install tk library: pip install tk
   - time library is installed by default with python
   - pyinstaller will allow you to compile the file as a windows executable: pip install pyinstaller
-    you can then use the following command to compile: pyinstaller --onefile TimeLock.py (it will create TimeLock.exe file)
+    you can then use the following command to compile: pyinstaller --onefile --noconsole TimerLock.py (it will create TimeLock.exe file as one file and will remove the terminal console from showing)

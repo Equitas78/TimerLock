@@ -1,6 +1,8 @@
 import tkinter as tk
 import sys
+import os
 
+# Unlock Screen if password correct
 def unlock(password_entry, root, error_label):
     password = password_entry.get()
     
@@ -11,7 +13,19 @@ def unlock(password_entry, root, error_label):
         error_label.config(text="Incorrect password. Please try again.")  
         password_entry.delete(0, tk.END)
 
+# Shutdown System if password correct
+def shutdown_windows(password_entry, error_label):
+    password = password_entry.get()
+    
+    if password == "hello":  
+        os.system("shutdown /s /t 3")  
+    else:
+        error_label.config(text="Incorrect password. Please try again.")  
+        password_entry.delete(0, tk.END)
+
+# Initiate Lock Screen by generating a full screen, on top, black square with commands activated by password
 def show_lock_screen():
+    
     root = tk.Tk()
     root.attributes('-fullscreen', True)
     root.configure(background='black') 
@@ -25,7 +39,7 @@ def show_lock_screen():
 
     password_entry = tk.Entry(root, show='*')
     password_entry.pack(pady=10)
-
+  
     def unlock_and_destroy(event=None):
         unlock(password_entry, root, error_label)
 
@@ -35,4 +49,8 @@ def show_lock_screen():
     unlock_button = tk.Button(root, text="Unlock", command=lambda: unlock(password_entry, root, error_label))
     unlock_button.pack(pady=10)
     
+    shutdown_button = tk.Button(root, text="ShutDown", command=lambda: shutdown_windows(password_entry, error_label))
+    shutdown_button.pack(pady=10)
+    
     root.mainloop()
+
