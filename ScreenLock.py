@@ -2,6 +2,7 @@ import tkinter as tk
 import sys
 import os
 
+
 # Unlock Screen if password correct
 def unlock(password_entry, root, error_label):
     password = password_entry.get()
@@ -23,6 +24,15 @@ def shutdown_windows(password_entry, error_label):
         error_label.config(text="Incorrect password. Please try again.")  
         password_entry.delete(0, tk.END)
 
+def start_countdown(root, countdown_label, remaining_time):
+    if remaining_time > 0:
+        countdown_label.config(text=f"Time remaining: {remaining_time} seconds")
+        remaining_time -= 1
+        root.after(1000, start_countdown, root, countdown_label, remaining_time)
+    else:
+        root.destroy()
+        sys.exit()
+        
 # Initiate Lock Screen by generating a full screen, on top, black square with commands activated by password
 def show_lock_screen():
     

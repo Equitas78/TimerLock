@@ -1,22 +1,25 @@
-import tkinter as tk
-from Countdown import create_transparent_box
+import time
 from ScreenLock import show_lock_screen
-import adminscreen
+from Countdown import create_transparent_box
+
+# import adminscreen
 
 # This is where you can specify the time. I need to refactor it later to be able to have it configurable in a good GUI
 def main():
-    print("start")    
-#    time_limit = 2 * 60 * 60 
+ 
+    global time_limit 
+    time_limit = 2 * 60 * 60 
+    try:
+        seconds = int(input("Enter the time limit in hours: "))
+        time_limit = seconds
+    except ValueError:
+        print("Numeric value required.")
     
-#     try:
-#        seconds = int(input("Enter the time limit in hours: "))
-#        time_limit = seconds
-#    except ValueError:
-#        print("Numeric value required.")
-
-#    time.sleep(time_limit)
+    create_transparent_box(time_limit)
     
-#    show_lock_screen()
+    time.sleep(time_limit)
+    
+    show_lock_screen()
   
 # Starting the program   
 if __name__ == "__main__":
