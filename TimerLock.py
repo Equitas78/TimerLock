@@ -1,4 +1,4 @@
-import adminscreen
+import AdminScreen
 
 #from ScreenLock import show_lock_screen
 #from Countdown import create_transparent_box
