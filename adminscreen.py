@@ -5,6 +5,7 @@ from ScreenLock import show_lock_screen
 
 root = tk.Tk()
 root.title("Time Selection")
+root.geometry("250x150+" + str(int(root.winfo_screenwidth()/2)) + "+" + str(int(root.winfo_screenheight()/2)) )
 
 def start_program_with_selected_time():
     hours = int(hours_var.get())

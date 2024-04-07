@@ -1,5 +1,6 @@
 import tkinter as tk
 from ScreenLock import show_lock_screen
+from TempScreenLock import temp_lock_screen
            
 # This is the formatting for the transparent label that will show on the bottom right of the screen
 def update_countdown(label, remaining_time):
@@ -27,9 +28,18 @@ def create_transparent_box(time_limit):
     def update():
         nonlocal remaining_time
         if remaining_time > 0:
+#I added a Modulo so that every 45 min the timer stops.
+#I think there is a better way to do it i.e. configuring based on time spent and not time remaining.
+            if ((remaining_time/60)%45) == 0:
+                temp_lock_screen(15)
+                remaining_time -= 1
+                update_countdown(countdown_label, remaining_time)
+                countdown_label.after(1000, update)
+                
             remaining_time -= 1
             update_countdown(countdown_label, remaining_time)
             countdown_label.after(1000, update)
+
         else:
             show_lock_screen()
             

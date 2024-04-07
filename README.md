@@ -5,7 +5,7 @@ Cloud Server would solve a lot of the administration and granular configuration
 For now, the compiling would require that the TimeLock exe is part of the Run in the registry in Regedit for windows
 Also the code is only relevant for one screen. Multiple screens are not yet blocked.
 
-# Add Admin form to adjust time
+# Add Admin form to adjust time --> Completed
 # If computer is restarted, Timer should continue from where it started
 	- if the time is finished and windows is restarted, lock screen should be immediate
 	- if time not finished, than timer should continue counting down from where it stopped.
@@ -24,3 +24,4 @@ Install python (i did the dev in VSCode free from microsoft)
   - time library is installed by default with python
   - pyinstaller will allow you to compile the file as a windows executable: pip install pyinstaller
     you can then use the following command to compile: pyinstaller --onefile --noconsole TimerLock.py (it will create TimeLock.exe file as one file and will remove the terminal console from showing)
+  - Require "pip install pywin32" to use win32api
