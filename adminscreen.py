@@ -10,6 +10,7 @@ def start_program_with_selected_time():
     hours = int(hours_var.get())
     time_limit = hours * 60 * 60
     root.destroy()
+    
     create_transparent_box(time_limit)
     
     time.sleep(time_limit)
