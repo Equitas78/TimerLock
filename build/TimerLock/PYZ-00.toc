@@ -1,12 +1,20 @@
 ('C:\\Users\\joeas\\OneDrive - '
  'conform-x.com\\Documents\\GitHub\\TimeLock\\build\\TimerLock\\PYZ-00.pyz',
- [('Countdown',
+ [('AdminScreen',
+   'C:\\Users\\joeas\\OneDrive - '
+   'conform-x.com\\Documents\\GitHub\\TimeLock\\AdminScreen.py',
+   'PYMODULE'),
+  ('Countdown',
    'C:\\Users\\joeas\\OneDrive - '
    'conform-x.com\\Documents\\GitHub\\TimeLock\\Countdown.py',
    'PYMODULE'),
   ('ScreenLock',
    'C:\\Users\\joeas\\OneDrive - '
    'conform-x.com\\Documents\\GitHub\\TimeLock\\ScreenLock.py',
+   'PYMODULE'),
+  ('TempScreenLock',
+   'C:\\Users\\joeas\\OneDrive - '
+   'conform-x.com\\Documents\\GitHub\\TimeLock\\TempScreenLock.py',
    'PYMODULE'),
   ('_compat_pickle',
    'C:\\Users\\joeas\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\_compat_pickle.py',
@@ -25,10 +33,6 @@
    'PYMODULE'),
   ('_threading_local',
    'C:\\Users\\joeas\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\_threading_local.py',
-   'PYMODULE'),
-  ('adminscreen',
-   'C:\\Users\\joeas\\OneDrive - '
-   'conform-x.com\\Documents\\GitHub\\TimeLock\\adminscreen.py',
    'PYMODULE'),
   ('argparse',
    'C:\\Users\\joeas\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\argparse.py',

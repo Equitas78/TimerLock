@@ -28,6 +28,11 @@ def create_transparent_box(time_limit):
     def update():
         nonlocal remaining_time
         if remaining_time > 0:
+
+            remaining_time -= 1
+            update_countdown(countdown_label, remaining_time)
+            countdown_label.after(1000, update)
+
 #I added a Modulo so that every 45 min the timer stops.
 #I think there is a better way to do it i.e. configuring based on time spent and not time remaining.
             if ((remaining_time/60)%45) == 0:
@@ -36,10 +41,6 @@ def create_transparent_box(time_limit):
                 remaining_time -= 1
                 create_transparent_box(remaining_time)
                 
-            remaining_time -= 1
-            update_countdown(countdown_label, remaining_time)
-            countdown_label.after(1000, update)
-
         else:
             show_lock_screen()
             
