@@ -1,7 +1,6 @@
 import tkinter as tk
-import time
-import sys
 import os
+# from Countdown import create_transparent_box
 
 # Unlock Screen if password correct
 def unlock(password_entry, root, error_label):
@@ -57,7 +56,9 @@ def temp_lock_screen(tempTime):
             temp_time -= 1
             root.after(1000, update_timer)
         else:
-            root.destroy()    
+            root.destroy()
+            print("root destroyed")
+ #           create_transparent_box(timeLeft)   
 
     caption_label = tk.Label(root, text="15 min Rest!", font=('Helvetica', 100))
     caption_label.pack(expand=True)
