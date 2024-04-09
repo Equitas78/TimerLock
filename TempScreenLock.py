@@ -1,4 +1,5 @@
 import tkinter as tk
+import time
 import os
 # from Countdown import create_transparent_box
 
@@ -53,13 +54,14 @@ def temp_lock_screen(tempTime):
         if temp_time > 0:
             mins, secs = divmod(temp_time, 60)
             timer_label.config(text=f'{mins:02d}:{secs:02d}')
-            temp_time -= 1
-            root.after(1000, update_timer)
+            new_time = temp_time
+            new_time -= 1
+            root.after(1000, lambda: update_timer(new_time))
+            print(new_time)
         else:
             root.destroy()
             print("root destroyed")
- #           create_transparent_box(timeLeft)   
-
+ 
     caption_label = tk.Label(root, text="15 min Rest!", font=('Helvetica', 100))
     caption_label.pack(expand=True)
 
@@ -71,3 +73,5 @@ def temp_lock_screen(tempTime):
     update_timer(tempTime)
 
     root.mainloop()
+
+temp_lock_screen(900)

@@ -37,7 +37,7 @@ def create_transparent_box(time_limit):
 #I think there is a better way to do it i.e. configuring based on time spent and not time remaining.
             if ((remaining_time/60)%45) == 0:
                 transparent_window.destroy()
-                temp_lock_screen(15)
+                temp_lock_screen(900)
                 remaining_time -= 1
                 create_transparent_box(remaining_time)
                 
