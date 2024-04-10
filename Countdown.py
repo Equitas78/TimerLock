@@ -1,7 +1,11 @@
 import tkinter as tk
 from ScreenLock import show_lock_screen
 from TempScreenLock import temp_lock_screen
-           
+import json
+
+with open('config.json') as config_file:
+    config = json.load(config_file)   
+          
 # This is the formatting for the transparent label that will show on the bottom right of the screen
 def update_countdown(label, remaining_time):
     label.config(text=f"Time left: {remaining_time//3600} hours {(remaining_time%3600)//60} minutes {remaining_time%60} seconds")
@@ -37,7 +41,7 @@ def create_transparent_box(time_limit):
 #I think there is a better way to do it i.e. configuring based on time spent and not time remaining.
             if ((remaining_time/60)%45) == 0:
                 transparent_window.destroy()
-                temp_lock_screen(900)
+                temp_lock_screen(config['timeLock']*60)
                 remaining_time -= 1
                 create_transparent_box(remaining_time)
                 

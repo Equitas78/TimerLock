@@ -1,13 +1,18 @@
 import tkinter as tk
 import time
 import os
+import json
+
+with open('config.json') as config_file:
+    config = json.load(config_file)   
+    
 # from Countdown import create_transparent_box
 
 # Unlock Screen if password correct
 def unlock(password_entry, root, error_label):
     password = password_entry.get()
     
-    if password == "hello":  
+    if password == config['password']:  
         root.destroy()
         print("Destroy")
     else:
@@ -19,7 +24,7 @@ def temp_lock_screen(tempTime):
     def shutdown_windows(password_entry, error_label):
         password = password_entry.get()
         
-        if password == "hello":  
+        if password == config['password']:  
             os.system("shutdown /s /t 3")  
         else:
             error_label.config(text="Incorrect password. Please try again.")  
@@ -61,8 +66,10 @@ def temp_lock_screen(tempTime):
         else:
             root.destroy()
             print("root destroyed")
- 
-    caption_label = tk.Label(root, text="15 min Rest!", font=('Helvetica', 100))
+    
+    LockTime = str(config['timeLock']) + " min Rest!"
+    
+    caption_label = tk.Label(root, text= LockTime, font=('Helvetica', 100))
     caption_label.pack(expand=True)
 
     timer_label = tk.Label(root, font=('Helvetica', 100))
@@ -73,3 +80,4 @@ def temp_lock_screen(tempTime):
     update_timer(tempTime)
 
     root.mainloop()
+

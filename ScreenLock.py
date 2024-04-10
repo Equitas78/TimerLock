@@ -1,12 +1,16 @@
 import tkinter as tk
 import sys
 import os
+import json
+
+with open('config.json') as config_file:
+    config = json.load(config_file)   
 
 # Unlock Screen if password correct
 def unlock(password_entry, root, error_label):
     password = password_entry.get()
     
-    if password == "hello":  
+    if password == config['password']:  
         root.destroy()
         sys.exit(0)
     else:
@@ -17,7 +21,7 @@ def unlock(password_entry, root, error_label):
 def shutdown_windows(password_entry, error_label):
     password = password_entry.get()
     
-    if password == "hello":  
+    if password == config['password']:  
         os.system("shutdown /s /t 3")  
     else:
         error_label.config(text="Incorrect password. Please try again.")  
