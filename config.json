@@ -1,4 +1,5 @@
 {
     "password": "hello",
-    "timeLock": 15
+    "timeLock": 15,
+    "MaxContinuousTime": 45
 }

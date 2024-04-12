@@ -3,6 +3,7 @@ import tkinter as tk
 from Countdown import create_transparent_box
 from ScreenLock import show_lock_screen
 
+#build the launch admin screen
 def build_window():
     root = tk.Tk()
     root.title("Time Selection")
@@ -17,6 +18,7 @@ def build_window():
     hours_menu = tk.OptionMenu(root, hours_var, "1", "2", "3", "4", "5")
     hours_menu.pack()
 
+    #start the timer based on selection
     def start_program_with_selected_time():
         hours = int(hours_var.get())
         time_limit = hours * 60 * 60

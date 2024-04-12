@@ -21,6 +21,7 @@ def unlock(password_entry, root, error_label):
 
 # Shutdown System if password correct
 def temp_lock_screen(tempTime):
+    #shutdown the system after the time is up
     def shutdown_windows(password_entry, error_label):
         password = password_entry.get()
         
@@ -42,6 +43,7 @@ def temp_lock_screen(tempTime):
     password_entry = tk.Entry(root, show='*')
     password_entry.pack(pady=10)
     
+    #Unlock Screen
     def unlock_and_destroy(event=None):
         unlock(password_entry, root, error_label)
 
@@ -54,6 +56,7 @@ def temp_lock_screen(tempTime):
     shutdown_button = tk.Button(root, text="ShutDown", command=lambda: shutdown_windows(password_entry, error_label))
     shutdown_button.pack(pady=10)
 
+    #Start temporary Timer
     def update_timer(temp_time):
 
         if temp_time > 0:

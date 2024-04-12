@@ -39,7 +39,7 @@ def create_transparent_box(time_limit):
 
 #I added a Modulo so that every 45 min the timer stops.
 #I think there is a better way to do it i.e. configuring based on time spent and not time remaining.
-            if ((remaining_time/60)%45) == 0:
+            if ((remaining_time/60)%config('MaxContinuousTime')) == 0:
                 transparent_window.destroy()
                 temp_lock_screen(config['timeLock']*60)
                 remaining_time -= 1
