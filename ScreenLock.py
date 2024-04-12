@@ -58,3 +58,4 @@ def show_lock_screen():
     
     root.mainloop()
 
+show_lock_screen()
