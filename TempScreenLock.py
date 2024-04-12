@@ -80,5 +80,3 @@ def temp_lock_screen(tempTime):
     update_timer(tempTime)
 
     root.mainloop()
-
-temp_lock_screen(15)
