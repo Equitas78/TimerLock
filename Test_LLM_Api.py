@@ -2,6 +2,7 @@
 from openai import OpenAI
 import time
 
+
 def riddle(tries):
   
   for i in range(tries-1):
